@@ -1,0 +1,20 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: logstash-monitor
+  namespace: application
+  labels:
+    monitoring: logstash-components
+    release: prometheus
+spec:
+  namespaceSelector:
+    matchNames:
+      - application
+  selector:
+    matchLabels:
+      prometheus: "true"
+  endpoints:
+  - port: http
+    path: /metrics
+  podTargetLabels:
+    - application
