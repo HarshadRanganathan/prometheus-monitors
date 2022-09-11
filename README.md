@@ -86,6 +86,5 @@ Once you have added/updated a `ServiceMonitor` config, apply the changes referen
 `Note: You need to set kubectl context to the correct EKS cluster`
 
 ```
-cd fb/
 kubectl apply -f app-service-monitor.yaml
 ```
