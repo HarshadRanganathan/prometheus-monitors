@@ -33,8 +33,7 @@ spec:
     - {key: istio-prometheus-ignore, operator: DoesNotExist}
   namespaceSelector:
     matchNames:
-    - pes-2-0
-    - pes
+    - application
   jobLabel: envoy-stats
   endpoints:
   - path: /stats/prometheus
